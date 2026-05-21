@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Gallery</title>
+    <meta name="description" content="A professional, modern dynamic image gallery showcasing various projects.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-mode">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-camera-retro"></i>
+                Pixel<span>Gallery</span>
+            </a>
+            
+            <div class="search-container">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search images by title...">
+            </div>
+
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Discover Creative Projects</h1>
+            <p>Explore our curated collection of web designs, mobile apps, AI innovations, and Python tools.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="filter-section">
+            <div class="categories" id="categoryFilters">
+                <button class="filter-btn active" data-category="All">All</button>
+                <button class="filter-btn" data-category="Web Design">Web Design</button>
+                <button class="filter-btn" data-category="Mobile Apps">Mobile Apps</button>
+                <button class="filter-btn" data-category="AI Projects">AI Projects</button>
+                <button class="filter-btn" data-category="Python Projects">Python Projects</button>
+            </div>
+        </section>
+
+        <!-- Gallery Grid Container -->
+        <section id="galleryGrid" class="gallery-grid">
+            <!-- Skeleton Loaders will be injected here initially -->
+        </section>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state hidden">
+            <i class="fa-regular fa-image"></i>
+            <h3>No Images Found</h3>
+            <p>Try adjusting your search or filter criteria.</p>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="close-lightbox" id="closeLightbox" aria-label="Close Lightbox">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <div class="lightbox-body">
+                <div class="lightbox-img-container">
+                    <img id="lightboxImg" src="" alt="Enlarged Image">
+                </div>
+                <div class="lightbox-info">
+                    <span id="lightboxCategory" class="badge"></span>
+                    <h2 id="lightboxTitle"></h2>
+                    <p id="lightboxDesc"></p>
+                    <div class="lightbox-meta">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span id="lightboxDate"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> PixelGallery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
